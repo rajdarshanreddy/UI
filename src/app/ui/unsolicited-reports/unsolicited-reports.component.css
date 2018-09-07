@@ -1,0 +1,10 @@
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff !important;
+    border-bottom: 3px solid red;
+    border-radius: 0px;
+    background-color: #3F51B5;
+}
+
+.list-group-flush .list-group-item {
+    border: 0;
+}

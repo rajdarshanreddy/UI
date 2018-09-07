@@ -1,0 +1,38 @@
+<nav class="navbar navbar-light bg-white" style="box-shadow: 1px 1px 8px 0px #888888;padding: 0rem 1rem;z-index: 1000;">  
+        <a class="nav-item nav-link active" href="#" mat-button (click)="drawer.toggle()"><i class="fa fa-bars" style="font-size: 20px;"></i></a>
+      <a class="navbar-brand" href="/">PMP</a>
+      <div class="navbar-expand mr-auto">
+        <div class="navbar-nav">
+          <!-- <a class="nav-item nav-link" href="#"><i class="fas fa-greater-than"></i></a> -->
+        </div>
+      </div>
+      <div class="navbar-expand ml-auto navbar-nav">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#" target="_blank">
+          <p style="font-size: 18px; padding-top: 1px;">PMP</p>
+        </a>
+          <ul class="nav mt-1">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user text-primary" style="font-size: 16px;"></i></a>
+              <div class="dropdown-menu dropdown-menu-right pb-0">
+                <a class="dropdown-item text-secondary" href="#"><i class="fas fa-envelope mr-2"></i>demo@biztekinnovations.com</a><div class="dropdown-divider"></div>
+                <a class="dropdown-item text-secondary" href="#"><i class="fa fa-user mr-2"></i>My Account</a><div class="dropdown-divider"></div>
+                <a class="dropdown-item text-secondary" href="#"><i class="fas fa-sign-out-alt mr-2"></i>Sign Out</a><div class="dropdown-divider mb-0"></div>            
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <mat-drawer-container class="">
+        
+                <mat-drawer #drawer class="px-0 col-md-2" mode="side" opened>
+    <app-leftmenue ></app-leftmenue>
+</mat-drawer>
+
+    <div class="border-left pb-0 sidenav-content mb-0" style="background-color: #eeeeee;">
+        <app-dashboard class="col px-0"></app-dashboard>
+    </div>
+
+</mat-drawer-container>
+<app-footer></app-footer>

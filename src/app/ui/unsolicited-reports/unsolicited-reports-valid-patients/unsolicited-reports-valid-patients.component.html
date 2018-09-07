@@ -1,0 +1,144 @@
+<mat-form-field class="col p-3">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    </ng-container>
+
+    <!-- name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+    </ng-container>
+
+    <!-- dob Column -->
+    <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Dob </th>
+      <td mat-cell *matCellDef="let row"> {{row.dob}} </td>
+    </ng-container>
+
+    <!-- prescribers Column -->
+    <ng-container matColumnDef="prescribers">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Prescribers </th>
+      <td mat-cell *matCellDef="let row"> {{row.prescribers}} </td>
+    </ng-container>
+
+    <!-- dispensers Column -->
+    <ng-container matColumnDef="dispensers">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Dispensers </th>
+      <td mat-cell *matCellDef="let row"> {{row.dispensers}} </td>
+    </ng-container>
+
+    <!-- prescriptions Column -->
+    <ng-container matColumnDef="prescriptions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Prescriptions </th>
+      <td mat-cell *matCellDef="let row"> {{row.prescriptions}} </td>
+    </ng-container>
+
+    <!-- added Column -->
+    <ng-container matColumnDef="added">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Added </th>
+      <td mat-cell *matCellDef="let row"> {{row.added}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lnk">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
+      <td mat-cell *matCellDef="let row"> <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+          <i class="fas fa-external-link-alt"></i>
+        </button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+</div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Valid Patient</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-inline">
+          <label for="inputPassword6" class="col-sm-1"><b>Name:</b></label>
+          <div class="col-sm-3">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Ludie Schinner">
+          </div>
+          <label for="inputPassword6" class="col-sm-1"><b>DOB:</b></label>
+          <div class="col-sm-3">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="06/06/1942">
+          </div>
+          <label for="inputPassword6" class="col-sm-1"><b>Address:</b></label>
+          <div class="col-sm-3">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="GARD-N-24-42-22">
+          </div>
+        </div>
+        <div class="form-inline">
+          <label for="inputPassword6" class="col-sm-1"><b>City:</b></label>
+          <div class="col-sm-3">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Gardner">
+          </div>
+          <label for="inputPassword6" class="col-sm-1"><b>State:</b></label>
+          <div class="col-sm-3">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="MA">
+          </div>
+          <label for="inputPassword6" class="col-sm-1"><b>Zip:</b></label>
+          <div class="col-sm-3">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="01440">
+          </div>
+        </div>
+        <div class="alert alert-success mt-3" role="alert">
+            Valid 1
+          </div>
+
+          <!-- Nav tabs -->
+<ul class="nav nav-pills mb-3 text-center" id="pills-tab" role="tablist" style="box-shadow: 1px 1px 8px 0px #888888;    background-color: #eeeeee;">
+    <li class="nav-item col pl-0">
+      <a class="nav-link active text-secondary" data-toggle="tab" href="#prescriptions">Prescriptions</a>
+    </li>
+    <li class="nav-item col">
+      <a class="nav-link text-secondary" data-toggle="tab" href="#dispensers">Dispensers</a>
+    </li>
+    <li class="nav-item col">
+      <a class="nav-link text-secondary" data-toggle="tab" href="#prescribers">Prescribers</a>
+    </li>
+  </ul>
+  
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="prescriptions">
+        <button type="button" class="btn btn-primary float-right">Refresh RX</button>
+        <app-demo-table></app-demo-table>
+    </div>
+    <div class="tab-pane fade" id="dispensers">
+        <app-demo-table></app-demo-table>
+    </div>
+    <div class="tab-pane fade" id="prescribers">
+        <app-demo-table></app-demo-table>
+    </div>  
+  </div>
+ 
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Remove Valid Patient</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

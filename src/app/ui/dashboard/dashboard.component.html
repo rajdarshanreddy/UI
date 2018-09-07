@@ -1,0 +1,31 @@
+<!-- Nav tabs -->
+<ul class="nav nav-pills mb-3 text-center" id="pills-tab" role="tablist" style="box-shadow: 1px 1px 8px 0px #888888;    background-color: #fff;">
+  <li class="nav-item col pl-0">
+    <a class="nav-link active text-secondary" data-toggle="tab" href="#dashboard">Dashboard</a>
+  </li>
+  <li class="nav-item col">
+    <a class="nav-link text-secondary" data-toggle="tab" href="#unsolicitedreports">Unsolicited Reports</a>
+  </li>
+  <li class="nav-item col">
+    <a class="nav-link text-secondary" data-toggle="tab" href="#alerts">Alerts</a>
+  </li>
+  <li class="nav-item col">
+    <a class="nav-link text-secondary" data-toggle="tab" href="#news">News</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active col container" id="dashboard">
+    <app-dashboard-home ></app-dashboard-home>
+  </div>
+  <div class="tab-pane px-4" id="unsolicitedreports">
+    <app-unsolicited-reports></app-unsolicited-reports>
+  </div>
+  <div class="tab-pane container fade" id="alerts">
+    <app-alerts></app-alerts>
+  </div>
+  <div class="tab-pane container fade" id="news"><app-news></app-news></div>
+
+</div>
+

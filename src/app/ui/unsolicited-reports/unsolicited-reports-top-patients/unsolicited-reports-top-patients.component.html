@@ -1,0 +1,43 @@
+<div class="bg-white p-3">
+  <div class="row align-items-center">
+    <div class="col-md-auto">
+      <div class="form-inline">
+        <div class="form-group form-group mx-sm-3 mb-2">
+          <mat-form-field>
+            <mat-select placeholder="Select Period *" [(value)]="selected">
+              <mat-option value="12">Last One Year</mat-option>
+              <mat-option value="6">Last Six Months</mat-option>
+              <mat-option value="4">Last Four Months</mat-option>
+              <mat-option value="3">Last Three Months</mat-option>
+              <mat-option value="1">Last One Month</mat-option>
+              <mat-option value="custom">Custom</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group form-group mx-sm-3 mb-2">
+          <mat-form-field>
+            <input matInput placeholder="Top Number Of Patients" class="" value="">
+          </mat-form-field>
+        </div>
+        <div class="form-group form-group mx-sm-3 mb-2">
+          <mat-form-field>
+            <input matInput placeholder="Drug Schedule" class="" value="">
+          </mat-form-field>
+        </div>
+        <div class="form-group form-group mx-sm-3 mb-2">
+          <mat-form-field>
+            <input matInput placeholder="Drug Category" class="" value="">
+          </mat-form-field>
+        </div>
+        <div class="form-group form-group mx-sm-3 mb-2">
+          <mat-form-field>
+            <input matInput placeholder="Drug Generic Name" class="" value="">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="col-1">
+      <button type="submit" class="btn btn-primary mb-2">Search</button>
+    </div>
+  </div>
+</div>
